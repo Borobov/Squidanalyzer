@@ -1,4 +1,5 @@
 # Настройка Squidanalyzer (Astra Linux)
+https://squidanalyzer.darold.net/
 
 ### Устанавливаем Apache
 apt install apache2
@@ -37,12 +38,20 @@ make && make install
 or run it manually. For more information, see /README file.
 -------------------------------------------------------------------------------
 ```
+### Правим конфиг Squidanalyzer
+```
 nano /etc/squidanalyzer/squidanalyzer.conf
-меняем
+```
+меняем пусть до лог файлов SQUID
+```
 LogFile /var/log/squid/access.log
-Lang   /etc/squidanalyzer/lang/en_US.txt
-
-
+```
+Если необходимо меняем язык интерфейса
+```
+Lang   /etc/squidanalyzer/lang/ru_RU.txt
+```
+### Вносим изменения в конфиг Apache
+```
 nano /etc/apache2/sites-available/000-default.conf
 
         DocumentRoot /var/www/squidanalyzer
@@ -50,6 +59,8 @@ nano /etc/apache2/sites-available/000-default.conf
         <Directory /var/www/squidanalyzer>
         Options -Indexes +FollowSymLinks +MultiViews
         </Directory>
-		
+Если у вас Astra, то может возникнуть сообщение, что
+
+```	
 
 /usr/local/bin/squid-analyzer > /dev/null 2>&1
