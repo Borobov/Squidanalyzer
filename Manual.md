@@ -42,7 +42,7 @@ or run it manually. For more information, see /README file.
 ```
 nano /etc/squidanalyzer/squidanalyzer.conf
 ```
-меняем пусть до лог файлов SQUID
+меняем путь до лог файлов SQUID
 ```
 LogFile /var/log/squid/access.log
 ```
