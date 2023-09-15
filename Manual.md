@@ -81,4 +81,7 @@ systemctl restart apache2
 /usr/local/bin/squid-analyzer > /dev/null 2>&1
 ```
 
-Для проверка работы Squidanalyzer переходим по адресу: http://server
+Для проверка работы Squidanalyzer переходим по адресу:
+```
+http://<name_server or IP>
+```
