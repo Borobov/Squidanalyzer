@@ -7,11 +7,13 @@ apt install apache2
 wget https://sourceforge.net/projects/squid-report/files/squid-report/6.6/squidanalyzer-6.6.tar.gz
 
 ### Распаковываем и ставим
+```
 tar -zxvf squidanalyzer-6.6.tar.gz  
 apt install make  
 cd squidanalyzer-6.6  
 perl Makefile.PL  
 make && make install  
+```
 ```
 -----------------------------------------------------------------------------
 1. Modify your httpd.conf to allow access to HTML output like follow:
