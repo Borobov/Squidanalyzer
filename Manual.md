@@ -72,7 +72,7 @@ AstraMode off
 systemctl restart apache2
 ```	
 ### Обработка логов 
-Для ежедневной обработки логов SQID:  
+Для ежедневной обработки логов SQUID:  
 ```
 0 2 * * * /usr/local/bin/squid-analyzer > /dev/null 2>&1
 ```
