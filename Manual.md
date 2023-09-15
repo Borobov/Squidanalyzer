@@ -59,8 +59,19 @@ nano /etc/apache2/sites-available/000-default.conf
         <Directory /var/www/squidanalyzer>
         Options -Indexes +FollowSymLinks +MultiViews
         </Directory>
-Если у вас Astra, то может возникнуть сообщение, что
 
+Если у вас Astra, то может возникнуть сообщение, что требуется аутентификация (Error 500).
+Открывеам на редактирование конфиг Apache
+nano /etc/apache2/apache2.conf
+
+Находим блок: # Astra security mode.
+и приводим строку к виду:
+AstraMode off
+
+Затем перезапускаем Apache
+systemctl restart apache2
 ```	
 
 /usr/local/bin/squid-analyzer > /dev/null 2>&1
+
+Для проверка работы Squidanalyzer переходим по адресу: http://server
