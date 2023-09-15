@@ -71,7 +71,14 @@ AstraMode off
 Затем перезапускаем Apache
 systemctl restart apache2
 ```	
-
+### Обработка логов 
+Для ежедневной обработки логов SQID:  
+```
+0 2 * * * /usr/local/bin/squid-analyzer > /dev/null 2>&1
+```
+Либо запускать вручную, когда это требуется.
+```
 /usr/local/bin/squid-analyzer > /dev/null 2>&1
+```
 
 Для проверка работы Squidanalyzer переходим по адресу: http://server
