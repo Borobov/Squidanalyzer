@@ -1,20 +1,18 @@
-### Astra Linux
+# Настройка Squidanalyzer (Astra Linux)
 
-# Устанавливаем Apache
+### Устанавливаем Apache
 apt install apache2
 
+### Загружаем Squidanalyzer
 wget https://sourceforge.net/projects/squid-report/files/squid-report/6.6/squidanalyzer-6.6.tar.gz
 
+### Распаковываем и ставим
 tar -zxvf squidanalyzer-6.6.tar.gz
-
 apt install make
-
 cd squidanalyzer-6.6
-
 perl Makefile.PL
-
 make && make install
-
+```
 -----------------------------------------------------------------------------
 1. Modify your httpd.conf to allow access to HTML output like follow:
         Alias /squidreport /var/www/squidanalyzer
@@ -36,7 +34,7 @@ make && make install
 
 or run it manually. For more information, see /README file.
 -------------------------------------------------------------------------------
-
+```
 nano /etc/squidanalyzer/squidanalyzer.conf
 меняем
 LogFile /var/log/squid/access.log
